@@ -15,6 +15,7 @@ class PascalVOCDataset(BaseSegDataset):
         split (str): Split txt file for Pascal VOC.
     """
     METAINFO = dict(
+        # 数据集的标签都有哪些
         classes=('background', 'aeroplane', 'bicycle', 'bird', 'boat',
                  'bottle', 'bus', 'car', 'cat', 'chair', 'cow', 'diningtable',
                  'dog', 'horse', 'motorbike', 'person', 'pottedplant', 'sheep',

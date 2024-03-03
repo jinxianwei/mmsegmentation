@@ -1,5 +1,6 @@
 # dataset settings
 dataset_type = 'PascalVOCDataset'
+# voc的图像根路径需要修改
 data_root = 'data/VOCdevkit/VOC2012'
 crop_size = (512, 512)
 train_pipeline = [
@@ -47,8 +48,10 @@ train_dataloader = dict(
     dataset=dict(
         type=dataset_type,
         data_root=data_root,
+        # voc的图像路径前缀和seg mask路径前缀需要修改
         data_prefix=dict(
             img_path='JPEGImages', seg_map_path='SegmentationClass'),
+        # voc的训练txt文件路径需要修改
         ann_file='ImageSets/Segmentation/train.txt',
         pipeline=train_pipeline))
 val_dataloader = dict(
@@ -59,8 +62,10 @@ val_dataloader = dict(
     dataset=dict(
         type=dataset_type,
         data_root=data_root,
+        # voc的图像路径前缀和seg mask路径前缀需要修改
         data_prefix=dict(
             img_path='JPEGImages', seg_map_path='SegmentationClass'),
+        # voc的图像路径前缀和seg mask路径前缀需要修改
         ann_file='ImageSets/Segmentation/val.txt',
         pipeline=test_pipeline))
 test_dataloader = val_dataloader
